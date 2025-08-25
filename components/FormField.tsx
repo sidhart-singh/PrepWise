@@ -20,7 +20,7 @@ const FormField = <T extends FieldValues>({
   control,
   label,
   placeholder,
-  type = "text",
+  type,
 }: FormFieldProps<T>) => {
   return (
     <Controller
@@ -30,7 +30,7 @@ const FormField = <T extends FieldValues>({
         <FormItem>
           <FormLabel className="label">{label}</FormLabel>
           <FormControl>
-            <Input placeholder={placeholder} {...field} />
+            <Input placeholder={placeholder} type={type} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>
