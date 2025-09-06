@@ -41,12 +41,12 @@ export async function POST(request: NextRequest) {
       userId: userid,
       finalized: true,
       coverImage: getRandomInterviewCover(),
-      createdAt: new Date().toISOString(),
+      createdAt: new Date().toLocaleDateString(),
     };
 
     await db.collection("interviews").add(interview);
 
-    return NextResponse.json({ success: true }, { status: 201 });
+    return NextResponse.json({ success: true, interview }, { status: 201 });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ success: false, error }, { status: 500 });
