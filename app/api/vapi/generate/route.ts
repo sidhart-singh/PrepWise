@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       userId: userid,
       finalized: true,
       coverImage: getRandomInterviewCover(),
-      createdAt: new Date().toLocaleDateString(),
+      createdAt: new Date().toLocaleTimeString(),
     };
 
     await db.collection("interviews").add(interview);
