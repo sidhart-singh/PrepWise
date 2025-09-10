@@ -7,7 +7,7 @@ import DisplayTechIcons from "./DisplayTechIcons";
 import { getRandomInterviewCover } from "@/lib/utils";
 
 const InterviewCard = ({
-  interviewId,
+  id: interviewId,
   userId,
   role,
   type,

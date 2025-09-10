@@ -1,7 +1,6 @@
 "use server";
 
 import { auth, db } from "@/firebase/admin";
-import { secureHeapUsed } from "crypto";
 import { cookies } from "next/headers";
 
 export async function signup(params: SignUpParams) {
