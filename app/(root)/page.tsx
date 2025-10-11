@@ -34,8 +34,8 @@ const Home = async () => {
           </Button>
         </div>
         <Image
-          alt="robo-dude"
-          src="/robot.png"
+          alt="banner"
+          src="/banner.png"
           width={400}
           height={400}
           className="max-sm:hidden"
