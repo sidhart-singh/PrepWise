@@ -4,10 +4,22 @@ import { generateText } from "ai";
 import { getRandomInterviewCover } from "@/lib/utils";
 import { db } from "@/firebase/admin";
 
+export const dynamic = "force-dynamic";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "*", // VAPI headers
+};
+
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders });
+}
+
 export async function GET(request: NextRequest) {
   return NextResponse.json(
     { success: true, data: "THANK YOU" },
-    { status: 200 }
+    { headers: corsHeaders, status: 200 },
   );
 }
 
